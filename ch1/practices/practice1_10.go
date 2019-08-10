@@ -29,11 +29,9 @@ func main() {
 	}
 
 	for _, url := range options {
-		//split
 		tmp := strings.Split(url, "://")[1]
 		p := filePath + strings.Split(tmp, "?")[0]
 
-		//make each dir
 		if _, err := os.Stat(p); os.IsNotExist(err) {
 			os.Mkdir(p, os.ModePerm)
 		}
